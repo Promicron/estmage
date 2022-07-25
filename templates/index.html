@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <!-- <meta name="google-signin-client_id" content="566858046418-c4l75pe0uvr4s5uj47s4d6ko4qtii698.apps.googleusercontent.com"> -->
+    <link rel="stylesheet" href="/static/index.css">
+    <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+<body class="bd">
+    <!-- Preloader -->
+    <div id="preloader">
+        
+    </div>
+    <!-- End of prelaoder -->
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand fw-bold" href="#">Age Prediction System</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto">
+              <!-- <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+              </li> -->
+              <li class="nav-item">
+                <a class="nav-link text-white btn btn-primary" href="#">Sign out</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+    
+    <div class="container-fluid cont p-5">
+        <h1 class="text-center text-white fw-bold">Age Prediction System</h1>
+        <div class="container col-md-4 col-sm-12 mt-auto text-white ">
+            <!-- <h2 class="text-center text-bold">Welcome!! </h2> -->
+            <h4>Upload an image and let's predict the age range you belong.</h4>
+            <form action="/" method="post" enctype="multipart/form-data">
+                <label for="imagefile"></label>
+                <input type="file" name="imagefile" id="" class="form-control">
+
+                <input type="submit" value="Submit" class="form-control btn-primary submitBtn">
+            </form>
+
+            <div class="result mt-4">
+                {% if age_pred %}
+                    <h3 class="text-center fw-bold " id="resultText"> Predicted age is : {{age_pred}} years old</h3>
+                    <!-- <div>
+                        {{age_pred}}
+                    </div> -->
+                {% endif %}
+            </div>
+            <div class="demo"></div>
+            <form action="" method="post">
+
+            </form>
+        </div>
+    </div>
+    <script>
+        let loader = document.getElementById("preloader");
+  
+        window.addEventListener("load", function(){
+            loader.style.display = "none";
+        })
+    </script>
+    <script>
+      const subBtn = document.querySelector('.submitBtn');
+
+      subBtn.addEventListener("click", () => {
+        document.getElementById('resultText').display = "block";
+      });
+      
+      // const element = document.getElementById("myBtn");
+      // element.addEventListener("click", function() {
+      //     document.getElementById("demo").innerHTML = "Hello World";
+      // });
+    </script>
+</body>
+</html>
