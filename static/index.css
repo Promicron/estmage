@@ -16,5 +16,5 @@
     transition: 3s all;
 }
 #resultText{
-  display: none;
+  /* display: none; */
 }

@@ -91,7 +91,6 @@ def classify_age(img):
         # Calling the above defined function to create the predicted age overlay on the image.
         face_age_background, face_age_text, yrsold_text = create_age_text(img_copy, face_age, face_age_pct, x, y, w, h)
         print(f"Age prediction for face {i+1} : {face_age} years old")
-
     return (face_age)
 
 def new_img_name(org_img_path):
