@@ -253,7 +253,11 @@ def upload():
 
 
 if __name__ == '__main__':
+<<<<<<< HEAD
     app.run(port=4000,debug=True)
 
 camera.release()
 cv2.destroyAllWindows()
+=======
+    app.run()
+>>>>>>> 075ee26003d3115a1509563d5429d004d43acc5a
