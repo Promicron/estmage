@@ -50,7 +50,18 @@
 
                 <input type="submit" value="Submit" class="form-control btn-primary submitBtn">
             </form>
-
+            <!-- <a href="/webcam">
+              <input type="button" class="btn btn-primary" value="Webcam">
+            </a> -->
+            <!-- <img src="{{ url_for('video_feed') }}" alt="" style="height: 100px;"> -->
+            <!-- <form method="post" action="{{ url_for('tasks') }}">
+              <input type="submit" value="Stop/Start" name="stop" />
+              <input type="submit" value="Capture" name="click" />
+              <input type="submit" value="Grey" name="grey" />
+              <input type="submit" value="Negative" name="neg" />
+              <input type="submit" value="Face Only" name="face" />
+              <input type="submit" value="Start/Stop Recording" name="rec" />
+            </form> -->
             <div class="result mt-4">
                 {% if age_pred %}
                     <h3 class="text-center fw-bold " id="resultText"> Predicted age is : {{age_pred}} years old</h3>
@@ -60,9 +71,6 @@
                 {% endif %}
             </div>
             <div class="demo"></div>
-            <form action="" method="post">
-
-            </form>
         </div>
     </div>
     <script>

@@ -3,9 +3,9 @@ import numpy as np
 import cv2
 import os
 import datetime, time
+from threading import Thread
 # from google.colab.patches import cv2_imshow
 from keras.models import load_model
-
 
 global capture,rec_frame, grey, switch, neg, face, rec, out
 capture=0
@@ -39,7 +39,7 @@ def record(out):
         time.sleep(0.05)
         out.write(rec_frame)
  
-
+ 
 def detect_face(frame):
     global net
     (h, w) = frame.shape[:2]
@@ -192,7 +192,7 @@ def home():
 def video_feed():
     return Response(gen_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
 
-@app.route('/webcam',methods=['POST','GET'])
+@app.route('/',methods=['POST','GET'])
 def tasks():
     global switch,camera
     if request.method == 'POST':
@@ -235,8 +235,8 @@ def tasks():
                           
                 
     elif request.method=='GET':
-        return render_template('webcam.html')
-    return render_template('webcam.html')
+        return render_template('index.html')
+    return render_template('index.html')
 
 @app.route("/", methods=['GET' , 'POST'])
 def upload():
